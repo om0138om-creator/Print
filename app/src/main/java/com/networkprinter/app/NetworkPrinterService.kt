@@ -118,7 +118,9 @@ class NetworkPrinterService {
         options: PrintOptions
     ): PrintResult = withContext(Dispatchers.IO) {
         try {
-            val url = URL(printer.ippUrl)
+            // تحويل بروتوكول ipp إلى http حتى يتعرف عليه النظام
+            val fixedUrl = printer.ippUrl.replaceFirst("ipp://", "http://")
+            val url = URL(fixedUrl)
             val connection = url.openConnection() as HttpURLConnection
             
             connection.apply {

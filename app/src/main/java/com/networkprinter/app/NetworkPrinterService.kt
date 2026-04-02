@@ -357,10 +357,17 @@ class NetworkPrinterService {
                     return@withContext PrintResult.Error("LPD printer not ready")
                 }
                 
-                // Send data file
-                val imageData = ByteArrayOutputStream()
-                bitmap.compress(Bitmap.CompressFormat.JPEG, options.quality, imageData)
-                val data = imageData.toByteArray()
+                // إنشاء ملف PDF برمجياً ووضع الصورة بداخله لأن الطابعة تفهمه أفضل
+                val pdfDocument = android.graphics.pdf.PdfDocument()
+                val pageInfo = android.graphics.pdf.PdfDocument.PageInfo.Builder(bitmap.width, bitmap.height, 1).create()
+                val page = pdfDocument.startPage(pageInfo)
+                page.canvas.drawBitmap(bitmap, 0f, 0f, null)
+                pdfDocument.finishPage(page)
+
+                val pdfData = ByteArrayOutputStream()
+                pdfDocument.writeTo(pdfData)
+                pdfDocument.close()
+                val data = pdfData.toByteArray()
                 
                 // Control file
                 output.writeByte(0x02)

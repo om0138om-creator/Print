@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardPrinter"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:strokeWidth="2dp"
+    app:strokeColor="@color/divider"
+    app:checkedIcon="@drawable/ic_check"
+    app:checkedIconTint="@color/primary"
+    android:checkable="true"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <!-- أيقونة الطابعة -->
+        <FrameLayout
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/circle_background">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_printer"
+                app:tint="@color/primary" />
+
+        </FrameLayout>
+
+        <!-- معلومات الطابعة -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
+
+            <TextView
+                android:id="@+id/textPrinterName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                tools:text="HP LaserJet Pro" />
+
+            <TextView
+                android:id="@+id/textPrinterAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginTop="2dp"
+                tools:text="192.168.1.100:631" />
+
+        </LinearLayout>
+
+        <!-- حالة الاتصال -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <View
+                android:id="@+id/statusIndicator"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/status_indicator"
+                tools:backgroundTint="@color/status_online" />
+
+            <TextView
+                android:id="@+id/textStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginStart="4dp"
+                tools:text="متصلة"
+                tools:textColor="@color/status_online" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

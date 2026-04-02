@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Network Printer</string>
+    
+    <!-- العناوين -->
+    <string name="title_select_image">اختر صورة</string>
+    <string name="title_printers">الطابعات المتاحة</string>
+    <string name="title_print_preview">معاينة الطباعة</string>
+    
+    <!-- الأزرار -->
+    <string name="btn_select_image">اختيار صورة</string>
+    <string name="btn_scan_printers">البحث عن طابعات</string>
+    <string name="btn_print">طباعة</string>
+    <string name="btn_cancel">إلغاء</string>
+    <string name="btn_retry">إعادة المحاولة</string>
+    
+    <!-- الرسائل -->
+    <string name="msg_searching">جارٍ البحث عن طابعات...</string>
+    <string name="msg_no_printers">لم يتم العثور على طابعات</string>
+    <string name="msg_printer_found">تم العثور على %d طابعة</string>
+    <string name="msg_printing">جارٍ الطباعة...</string>
+    <string name="msg_print_success">تمت الطباعة بنجاح!</string>
+    <string name="msg_print_error">فشل في الطباعة</string>
+    <string name="msg_select_image_first">الرجاء اختيار صورة أولاً</string>
+    <string name="msg_select_printer_first">الرجاء اختيار طابعة أولاً</string>
+    <string name="msg_permission_required">مطلوب إذن الوصول</string>
+    <string name="msg_wifi_required">يجب الاتصال بشبكة WiFi</string>
+    
+    <!-- حالات الطابعة -->
+    <string name="printer_status_online">متصلة</string>
+    <string name="printer_status_offline">غير متصلة</string>
+    <string name="printer_status_busy">مشغولة</string>
+</resources>
